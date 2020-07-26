@@ -1,6 +1,8 @@
 let i = 1;
 let arrProst = [];
 
+alert("Программа будет выводить результаты в консоль, пожалуйста включите ее. Сейчас мы выведем просты числа от 2 до 100")
+
 // Не могу понять, почему не дает задать значение j = 1 и выводить с 2. Если ставлю j = 2, программа не работает.
 function delenieProst(n) {    // функция признака: делится число с остатком или без
 	let m = 0;
@@ -21,8 +23,34 @@ while (i < 100) {
 	if (delenieProst(i) === 1) {
 		arrProst.push(i)
 	}
-	
 }
 
-console.log(arrProst);
+console.log(arrProst); // Выводим массив в консоль
 
+alert("Переходим к заданию номер 2 - посчитаем стоимость товаром в корзине. Ок")
+
+const basketInternet = [100, 20, 250, 2000, 3300, 5, 80, 445, 700]; // Задаем корзину
+
+alert("Представьте, что в корзине лежат товары с указаной стоимостью. Сейчас Вы увидите товары в табличной форме.  Нажмине Ок")
+
+basketInternet.forEach(function(item, index,arr) {
+	console.table({item, index});         // выводим в табличной форме содержимое корзины
+
+});
+
+alert("Теперь мы посчитаем стоимость товарова в корзине с помощью reduce")
+
+let summ = basketInternet.reduce(function(accum, item) {
+	return accum + item; // Считаем сумму чисел массива (корзины)
+})
+
+console.log("Сумма товаров в корзине " + summ);
+
+alert("А теперь вы выведем в консоль пирамиду из 20 значков *");
+
+let arrZvezda = [];
+
+for (let zvezda = 0; zvezda < 20; zvezda++) {
+	arrZvezda.push("*");
+	console.log(arrZvezda);
+}
